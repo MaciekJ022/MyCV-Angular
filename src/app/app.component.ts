@@ -17,8 +17,13 @@ import { ExperienceComponent } from './components/experience/experience.componen
 })
 
 class EmotePipe{
-  transform(value: string, emoteValue: string){
-
+  transform(value: string, emoteValue: string, checked: boolean = false){
+    let emote = '&#128540'
+    if(checked){
+      value += emote
+      return value
+    }
+    
   }
 }
 
