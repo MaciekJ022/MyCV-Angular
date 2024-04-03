@@ -1,28 +1,36 @@
-import { Component, Input, Pipe } from '@angular/core';
+import { Component, Pipe } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { RouterLinkActive } from '@angular/router';
-import { CvData } from '../moldels/cvData';
+import { CvData } from '../data/cvData';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatInputModule} from '@angular/material/input';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { EducationComponent } from "./components/education/education.component";
 
 @Pipe({
   name:'emote'
 })
 
+class TranslationPipe{
+  transform(text: string, translation: string){
+    let translated = translation
+    let temp = text
+    text = translated
+    translated = temp
+    return text
+  }
+}
+
 class EmotePipe{
-  transform(value: string, emoteValue: string, checked: boolean = false){
+  transform(value: string){
     let emote = '&#128540'
-    if(checked){
-      value += emote
-      return value
-    }
+    value += emote 
+    return value
     
   }
 }
@@ -30,15 +38,14 @@ class EmotePipe{
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, BrowserModule, 
+  imports: [CommonModule, 
     RouterOutlet, RouterLink, RouterLinkActive, 
-    BrowserAnimationsModule, MatTabsModule, MatButtonModule, MatRadioModule, MatInputModule,
-    ExperienceComponent ],
+     MatTabsModule, MatButtonModule, MatRadioModule, MatInputModule,
+    ExperienceComponent,EducationComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  experience = ''
   data = [
     new CvData('Kamil',
       'Kowal',
@@ -49,9 +56,8 @@ export class AppComponent {
       'Szkoła Główna Handlowa'
       ], 
       false, 
-      false)
+      [])
     
   ]
-  experiences = []
   title = 'my-cv';
 }

@@ -3,17 +3,17 @@
     <h1>My CV</h1>
     <label for="Select language"></label>
     <mat-radio-group aria-label="Select language">
-      <mat-radio-button value="Pol">Polski</mat-radio-button>
-      <mat-radio-button value="Eng">English</mat-radio-button>
+      <mat-radio-button value="Pol" class="language">Polski</mat-radio-button>
+      <mat-radio-button value="Eng" class="language">English</mat-radio-button>
     </mat-radio-group>
   </header>
-  <div id="personalInfo">
+  <div id="personalInfo" class="Info">
     <img src="" alt="YourPhoto">
-    <h3>{{data[0].name}}</h3>
-    <h3>{{data[0].surname}}</h3>
-    <h3>{{data[0].age}}</h3>
+    <h3>Imie: {{data[0].name}}</h3>
+    <h3>Nazwisko: {{data[0].surname}}</h3>
+    <h3>Wiek: {{data[0].age}} lat</h3>
   </div>
-  <div id="workInfo">
+  <div id="workInfo" class="Info">
     <mat-tab-group>
       <mat-tab label="Edukacja">Zero</mat-tab>
       <mat-tab label="Doświadczenie">Brak</mat-tab>

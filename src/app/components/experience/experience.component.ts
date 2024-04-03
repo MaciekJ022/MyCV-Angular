@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, Input, Output } from '@angular/core
   imports: [
     CommonModule,
   ],
-  template: `<p>experience works!</p>`,
+  templateUrl: './experience.component.html',
   styleUrl: './experience.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

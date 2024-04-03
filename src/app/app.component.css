@@ -8,3 +8,25 @@ main {
     box-sizing: inherit;
     position: relative;
   }
+header{
+  width: 100%;
+  border: 1px solid black;
+}
+
+.language{
+  color: black;
+}
+
+.Info{
+  border: 1px solid black;
+}
+
+#personalInfo{
+  float: left;
+  width: 20%;
+}
+
+#workInfo{
+  float: right;
+  width: 80%;
+}
