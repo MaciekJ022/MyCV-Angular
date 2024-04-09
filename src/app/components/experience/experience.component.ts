@@ -1,5 +1,6 @@
 import { CommonModule, } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, Output } from '@angular/core';
+import { CvdataService } from '../../../services/cvdata.service';
 
 @Component({
   selector: 'app-experience',
@@ -9,8 +10,11 @@ import { ChangeDetectionStrategy, Component, Input, Output } from '@angular/core
   ],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExperienceComponent {
-    @Input() value!: string
+ public DataList: any = []
+ 
+ constructor(private dataService: CvdataService){
+   this.DataList = this.dataService.getData()
+ }
  }

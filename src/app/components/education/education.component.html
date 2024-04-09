@@ -1,8 +1,14 @@
-<!-- <div>
+<div>
     <h3></h3>
     <ul>
-        @for(school of education; track $index ){
-            <li>{{school}}</li>
-        }
+        @for (school of DataList[0].education; track $index) {
+            @if (school.to === '-') {
+                <li>{{school.name}} - w trakcie</li>
+            }
+            @else {
+                <li>{{school.name}} </li>
+            }
+            
+          }
     </ul>
-</div> -->
+</div>

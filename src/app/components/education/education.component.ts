@@ -1,5 +1,6 @@
 import { CommonModule, } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CvdataService } from '../../../services/cvdata.service';
 
 
 @Component({
@@ -12,4 +13,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 export class EducationComponent {
 
+    public DataList: any = []
+
+  constructor(private dataService: CvdataService){
+    //this.DataList = this.dataService.getData()
+    this.DataList = this.dataService.getData()
+  }
 }
